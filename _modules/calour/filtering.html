@@ -58,6 +58,10 @@
 <span class="sd">   filter_by_data</span>
 <span class="sd">   filter_by_metadata</span>
 <span class="sd">   filter_samples</span>
+<span class="sd">   filter_ids</span>
+<span class="sd">   filter_mean</span>
+<span class="sd">   filter_prevalence</span>
+<span class="sd">   filter_min_abundance</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="c1"># ----------------------------------------------------------------------------</span>
@@ -335,7 +339,7 @@
                               <span class="n">negate</span><span class="o">=</span><span class="n">negate</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">filter_min_abundance</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">min_abundance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="filter_min_abundance"><a class="viewcode-back" href="../../_autosummary/calour.filtering.filter_min_abundance.html#calour.filtering.filter_min_abundance">[docs]</a><span class="k">def</span> <span class="nf">filter_min_abundance</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">min_abundance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Filter keeping only features with &gt;= min_abundance total over all samples</span>
 <span class="sd">    This is a convenience function wrapping filter_by_data()</span>
 
@@ -345,10 +349,10 @@
 <span class="sd">        The minimal total abundance for each feature over all samples</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">newexp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">filter_by_data</span><span class="p">(</span><span class="s1">&#39;sum_abundance&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">min_abundance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">newexp</span>
+    <span class="k">return</span> <span class="n">newexp</span></div>
 
 
-<span class="k">def</span> <span class="nf">filter_prevalence</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">10000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="filter_prevalence"><a class="viewcode-back" href="../../_autosummary/calour.filtering.filter_prevalence.html#calour.filtering.filter_prevalence">[docs]</a><span class="k">def</span> <span class="nf">filter_prevalence</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">10000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Filter features keeping only ones present in at least fraction fraction of the samples.</span>
 <span class="sd">    This is a convenience function wrapping filter_by_data()</span>
 
@@ -364,10 +368,10 @@
 <span class="sd">    ``Experiment`` with only features present in at least fraction of samples</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">newexp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">filter_by_data</span><span class="p">(</span><span class="s1">&#39;prevalence&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="n">fraction</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">newexp</span>
+    <span class="k">return</span> <span class="n">newexp</span></div>
 
 
-<span class="k">def</span> <span class="nf">filter_mean</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="filter_mean"><a class="viewcode-back" href="../../_autosummary/calour.filtering.filter_mean.html#calour.filtering.filter_mean">[docs]</a><span class="k">def</span> <span class="nf">filter_mean</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Filter features with a mean at least cutoff of the mean total abundance/sample</span>
 
 <span class="sd">    In order to keep features with mean abundance of 1%, use ``filter_mean(cutoff=0.01)``</span>
@@ -384,10 +388,10 @@
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">newexp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">filter_by_data</span><span class="p">(</span><span class="s1">&#39;mean_abundance&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span> <span class="o">*</span> <span class="n">factor</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">newexp</span>
+    <span class="k">return</span> <span class="n">newexp</span></div>
 
 
-<span class="k">def</span> <span class="nf">filter_ids</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">negate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="filter_ids"><a class="viewcode-back" href="../../_autosummary/calour.filtering.filter_ids.html#calour.filtering.filter_ids">[docs]</a><span class="k">def</span> <span class="nf">filter_ids</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">negate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Filter samples or features based on a list index values</span>
 
 <span class="sd">    Parameters</span>
@@ -423,7 +427,7 @@
         <span class="n">okpos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">)),</span> <span class="n">okpos</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">newexp</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">reorder</span><span class="p">(</span><span class="n">okpos</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">newexp</span>
+    <span class="k">return</span> <span class="n">newexp</span></div>
 </pre></div>
 
           </div>

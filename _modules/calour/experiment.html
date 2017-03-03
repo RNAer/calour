@@ -87,7 +87,7 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="Experiment"><a class="viewcode-back" href="../../_autosummary/calour.experiment.Experiment.html#calour.experiment.Experiment">[docs]</a><span class="k">class</span> <span class="nc">Experiment</span><span class="p">:</span>
+<div class="viewcode-block" id="Experiment"><a class="viewcode-back" href="../../_autosummary/calour.experiment.Experiment.html#calour.amplicon_experiment.Experiment">[docs]</a><span class="k">class</span> <span class="nc">Experiment</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;This class contains the data for a experiment or a meta experiment.</span>
 
 <span class="sd">    The data set includes a data table (otu table, gene table,</span>
@@ -127,7 +127,7 @@
 <span class="sd">    description : str</span>
 <span class="sd">        name of the experiment</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-<div class="viewcode-block" id="Experiment.__init__"><a class="viewcode-back" href="../../_autosummary/calour.experiment.Experiment.html#calour.experiment.Experiment.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sample_metadata</span><span class="p">,</span> <span class="n">feature_metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Experiment.__init__"><a class="viewcode-back" href="../../_autosummary/calour.experiment.Experiment.html#calour.amplicon_experiment.Experiment.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sample_metadata</span><span class="p">,</span> <span class="n">feature_metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">exp_metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sample_metadata</span> <span class="o">=</span> <span class="n">sample_metadata</span>
@@ -414,7 +414,7 @@
         <span class="k">return</span> <span class="n">newexp</span></div>
 
 
-<div class="viewcode-block" id="add_functions"><a class="viewcode-back" href="../../_autosummary/calour.experiment.add_functions.html#calour.experiment.add_functions">[docs]</a><span class="k">def</span> <span class="nf">add_functions</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span>
+<div class="viewcode-block" id="add_functions"><a class="viewcode-back" href="../../_autosummary/calour.experiment.add_functions.html#calour.amplicon_experiment.add_functions">[docs]</a><span class="k">def</span> <span class="nf">add_functions</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span>
                   <span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.io&#39;</span><span class="p">,</span> <span class="s1">&#39;.sorting&#39;</span><span class="p">,</span> <span class="s1">&#39;.filtering&#39;</span><span class="p">,</span> <span class="s1">&#39;.analysis&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;.transforming&#39;</span><span class="p">,</span> <span class="s1">&#39;.heatmap.heatmap&#39;</span><span class="p">,</span> <span class="s1">&#39;.plotting&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;.manipulation&#39;</span><span class="p">,</span> <span class="s1">&#39;.analysis&#39;</span><span class="p">]):</span>

@@ -28,7 +28,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="calour 0.1 documentation" href="index.html" />
     <link rel="next" title="calour.filtering.filter_by_data" href="_autosummary/calour.filtering.filter_by_data.html" />
-    <link rel="prev" title="calour.experiment.add_functions" href="_autosummary/calour.experiment.add_functions.html" />
+    <link rel="prev" title="calour.io.save_feature_metadata" href="_autosummary/calour.io.save_feature_metadata.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -63,6 +63,18 @@
 <tr class="row-odd"><td><a class="reference internal" href="_autosummary/calour.filtering.filter_samples.html#calour.filtering.filter_samples" title="calour.filtering.filter_samples"><code class="xref py py-obj docutils literal"><span class="pre">filter_samples</span></code></a>(exp,&nbsp;field,&nbsp;values[,&nbsp;negate,&nbsp;...])</td>
 <td>Shortcut for filtering samples.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="_autosummary/calour.filtering.filter_ids.html#calour.filtering.filter_ids" title="calour.filtering.filter_ids"><code class="xref py py-obj docutils literal"><span class="pre">filter_ids</span></code></a>(exp,&nbsp;ids[,&nbsp;axis,&nbsp;negate,&nbsp;inplace])</td>
+<td>Filter samples or features based on a list index values</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_autosummary/calour.filtering.filter_mean.html#calour.filtering.filter_mean" title="calour.filtering.filter_mean"><code class="xref py py-obj docutils literal"><span class="pre">filter_mean</span></code></a>(exp[,&nbsp;cutoff])</td>
+<td>Filter features with a mean at least cutoff of the mean total abundance/sample</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_autosummary/calour.filtering.filter_prevalence.html#calour.filtering.filter_prevalence" title="calour.filtering.filter_prevalence"><code class="xref py py-obj docutils literal"><span class="pre">filter_prevalence</span></code></a>(exp[,&nbsp;fraction,&nbsp;cutoff])</td>
+<td>Filter features keeping only ones present in at least fraction fraction of the samples.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_autosummary/calour.filtering.filter_min_abundance.html#calour.filtering.filter_min_abundance" title="calour.filtering.filter_min_abundance"><code class="xref py py-obj docutils literal"><span class="pre">filter_min_abundance</span></code></a>(exp,&nbsp;min_abundance,&nbsp;...)</td>
+<td>Filter keeping only features with &gt;= min_abundance total over all samples</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -85,7 +97,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="_autosummary/calour.experiment.add_functions.html" title="previous chapter">calour.experiment.add_functions</a></li>
+      <li>Previous: <a href="_autosummary/calour.io.save_feature_metadata.html" title="previous chapter">calour.io.save_feature_metadata</a></li>
       <li>Next: <a href="_autosummary/calour.filtering.filter_by_data.html" title="next chapter">calour.filtering.filter_by_data</a></li>
   </ul></li>
 </ul>
