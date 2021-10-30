@@ -316,9 +316,12 @@ def center_log_ratio(exp: Experiment, method=lambda matrix: matrix + 1, centrali
     if exp.sparse:
         exp.sparse = False
     if centralize:
-        exp.data = clr(skbio_centralize(method(exp.data)))
+        d = skbio_centralize(method(exp.data))
     else:
-        exp.data = clr(method(exp.data))
+        d = method(exp.data)
+    ld = np.log(d)
+    gm = ld.mean(axis=-1, keepdims=True)
+    exp.data = ld - gm
     return exp
 
 
